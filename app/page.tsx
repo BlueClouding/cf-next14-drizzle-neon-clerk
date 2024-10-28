@@ -2,6 +2,7 @@ import { getAllUsers, getUser } from "@/actions/userActions";
 import Todos from "@/components/Todos";
 import { currentUser } from "@clerk/nextjs/server";
 
+export const runtime = "edge";
 export default async function Home() {
   const user: any = await currentUser();
   if (!user) return;
